@@ -6,5 +6,13 @@ namespace GUI_Implementation
         {
             InitializeComponent();
         }
+
+        private void startScreen_Load(object sender, EventArgs e)
+        {
+            startScreenPanel.Visible = true;
+            loginPanel.Visible = false;
+            registrationPanel.Visible = false;
+        }
+
     }
 }
