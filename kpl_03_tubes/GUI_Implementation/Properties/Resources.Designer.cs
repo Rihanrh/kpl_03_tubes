@@ -63,9 +63,9 @@ namespace GUI_Implementation.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap background {
+        internal static System.Drawing.Bitmap Account_Selection {
             get {
-                object obj = ResourceManager.GetObject("background", resourceCulture);
+                object obj = ResourceManager.GetObject("Account Selection", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
