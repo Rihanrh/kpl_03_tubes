@@ -25,7 +25,7 @@ namespace AccountManager
 
     public class AccountConfig
     {
-        public Config config;
+        public List<Config> configs;
         public const string filePath = @"./acc_config.json";
 
         public AccountConfig()
@@ -41,16 +41,19 @@ namespace AccountManager
             }
         }
 
-        public Config ReadConfigFile()
+        public List<Config> ReadConfigFile()
         {
             string configJsonData = File.ReadAllText(filePath);
-            config = JsonSerializer.Deserialize<Config>(configJsonData);
-            return config;
+            configs = JsonSerializer.Deserialize<List<Config>>(configJsonData);
+            return configs;
         }
 
         private void SetDefault()
         {
-            config = new Config("Pembeli", "username", "password");
+            configs = new List<Config>
+            {
+                new Config("Pembeli", "username", "password")
+            };
         }
 
         public void WriteNewConfigFile()
@@ -60,7 +63,7 @@ namespace AccountManager
                 WriteIndented = true
             };
 
-            string jsonString = JsonSerializer.Serialize(config, options);
+            string jsonString = JsonSerializer.Serialize(configs, options);
             File.WriteAllText(filePath, jsonString);
         }
 
