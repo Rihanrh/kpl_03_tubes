@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AccountManager\AccountManager.csproj" />
+    <ProjectReference Include="..\Library_StatusOrder\Library_StatusOrder.csproj" />
   </ItemGroup>
 
   <ItemGroup>
