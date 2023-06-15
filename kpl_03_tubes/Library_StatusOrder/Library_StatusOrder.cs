@@ -16,6 +16,7 @@ namespace Library_StatusOrder
             orders.Add(order);
         }
 
+        /*
         public void MengonfirmasiPembayaranKasir(int kodeAntrian)
         {
             // Cari order dengan kode antrian yang diberikan
@@ -88,70 +89,7 @@ namespace Library_StatusOrder
 
 
         }
-        public void DisplayOrders()
-        {
-            Console.WriteLine("Daftar Pesanan:");
-            foreach (var order in orders)
-            {
-                Console.WriteLine("Tenant: " + order.tenant);
-                Console.WriteLine("Status: ");
-                foreach (var status in order.status)
-                {
-                    Console.WriteLine("- Kode Antrian: " + status.kodeAntrian);
-                    Console.WriteLine("  Status Order: " + status.statusOrder);
-                }
-                Console.WriteLine("Items:");
-                foreach (var item in order.items)
-                {
-                    Console.WriteLine("- Nama Menu: " + item.namaMenu);
-                    Console.WriteLine("  Jumlah: " + item.qty);
-                }
-                Console.WriteLine("Payment Details:");
-                foreach (var payment in order.paymentDetails)
-                {
-                    Console.WriteLine("- Nama Menu: " + payment.namaMenu);
-                    Console.WriteLine("  Harga: " + payment.harga);
-                    Console.WriteLine("  Total: " + payment.total);
-                }
-                Console.WriteLine("Payment Method: " + order.paymentMethod);
-                Console.WriteLine();
-            }
-        }
-
-        public void DisplayOrdersKasir()
-        {
-            for (int i = 0; i < orders.Count; i++)
-            {
-                if (orders[i].paymentMethod == "Tunai")
-                {
-                    Console.WriteLine();
-                    Console.WriteLine("Daftar Pesanan:");
-                    Console.WriteLine("Tenant: " + orders[i].tenant);
-                    Console.WriteLine("Status: ");
-                    for (int j = 0; j < orders[i].status.Count; j++)
-                    {
-                        Console.WriteLine("- Kode Antrian: " + orders[i].status[j].kodeAntrian);
-                        Console.WriteLine("  Status Order: " + orders[i].status[j].statusOrder);
-                    }
-                    Console.WriteLine("Items:");
-                    for (int k = 0; k < orders[i].items.Count; k++)
-                    {
-                        Console.WriteLine("- Nama Menu: " + orders[i].items[k].namaMenu);
-                        Console.WriteLine("  Jumlah: " + orders[i].items[k].qty);
-                    }
-                    Console.WriteLine("Payment Details:");
-                    for (int l = 0; l < orders[i].paymentDetails.Count; l++)
-                    {
-                        Console.WriteLine("- Nama Menu: " + orders[i].paymentDetails[l].namaMenu);
-                        Console.WriteLine("  Harga: " + orders[i].paymentDetails[l].harga);
-                        Console.WriteLine("  Total: " + orders[i].paymentDetails[l].total);
-                    }
-                    Console.WriteLine("Payment Method: " + orders[i].paymentMethod);
-                    Console.WriteLine();
-                }
-            }
-
-        }
+        
 
         public void DisplayOrdersTenant(string tenantID)
         {
@@ -195,7 +133,7 @@ namespace Library_StatusOrder
             }
             Console.WriteLine("-----------------------------------------------------------------------------");
 
-        }
+        }*/
 
 
 
@@ -203,15 +141,29 @@ namespace Library_StatusOrder
 
     public class order
     {
+        public string kodeAntrian { get; set; }
         public string tenant { get; set; }
-        public List<orderStatus> status { get; set; }
-        public List<orderItems> items { get; set; }
-
-        public List<paymentDetails> paymentDetails { get; set; }
+        public string namaMenu { get; set; }
+        public int qty { get; set; }
+        public double harga { get; set; }
         public string paymentMethod { get; set; }
+        public string statusPesanan { get; set; }
 
-        public order(string tenant, List<orderStatus> status, List<orderItems> items, List<paymentDetails> payment, string paymentMethod)
+        public order(string kodeAntrian,string tenant,string namaMenu, int qty, double harga,  string paymentMethod,string statusPesanan)
         {
+
+            try
+            {
+                Contract.Requires(!string.IsNullOrEmpty(kodeAntrian));
+                this.kodeAntrian = kodeAntrian;
+            }
+            catch (ArgumentException e)
+            {
+                Console.WriteLine("Error Message :" + e.Message);
+
+            }
+
+
             // tenenat tidak boleh kosong 
             try
             {
@@ -224,40 +176,50 @@ namespace Library_StatusOrder
 
             }
 
+            try
+            {
+                Contract.Requires(!string.IsNullOrEmpty(namaMenu));
+                this.namaMenu = namaMenu;
+            }
+            catch (ArgumentException e)
+            {
+                Console.WriteLine("Error Message :" + e.Message);
+
+            }
+
+            try
+            {
+                Contract.Requires(qty > 0);
+                this.qty = qty;
+            }
+            catch (ArgumentException e)
+            {
+                Console.WriteLine("Error Message :" + e.Message);
+
+            }
+            try
+            {
+                Contract.Requires(harga > 0);
+                this.harga = harga;
+            }
+            catch (ArgumentException e)
+            {
+                Console.WriteLine("Error Message :" + e.Message);
+
+            }
+
+
             // Status order tidak boleh kosong
             try
             {
-                Contract.Requires(status != null);
-                this.status = status;
+                Contract.Requires(statusPesanan != null);
+                this.statusPesanan = statusPesanan;
             }
             catch (ArgumentException e)
             {
                 Console.WriteLine("Error Message :" + e.Message);
             }
 
-            // Order Items tidak boleh kosong
-
-            try
-            {
-                Contract.Requires(items != null);
-                this.items = items;
-            }
-            catch (ArgumentException e)
-            {
-                Console.WriteLine("Error Message :" + e.Message);
-            }
-
-            // Payment Details tidak boleh kosong
-
-            try
-            {
-                Contract.Requires(payment != null);
-                this.paymentDetails = payment;
-            }
-            catch (ArgumentException e)
-            {
-                Console.WriteLine("Error Message :" + e.Message);
-            }
 
             // payment method tidak boleh kosong
             try
@@ -276,43 +238,5 @@ namespace Library_StatusOrder
 
     }
 
-    public class orderStatus
-    {
-        public int kodeAntrian { get; set; }
-        public string statusOrder { get; set; }
-
-
-
-        public orderStatus(int kodeAntrian, string statusOrder)
-        {
-            this.kodeAntrian = kodeAntrian;
-            this.statusOrder = statusOrder;
-        }
-    }
-
-    public class orderItems
-    {
-        public string namaMenu { get; set; }
-        public int qty { get; set; }
-
-        public orderItems(string namaMenu, int qty)
-        {
-            this.namaMenu = namaMenu;
-            this.qty = qty;
-        }
-    }
-
-    public class paymentDetails
-    {
-        public string namaMenu { get; set; }
-        public double harga { get; set; }
-        public double total { get; set; }
-
-        public paymentDetails(string namaMenu, double harga, double total)
-        {
-            this.namaMenu = namaMenu;
-            this.harga = harga;
-            this.total = total;
-        }
-    }
+   
 }
