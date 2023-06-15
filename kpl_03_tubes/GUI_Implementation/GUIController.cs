@@ -54,6 +54,7 @@ namespace GUI_Implementation
             else if (currentState == State.KasirRegistration)
             {
                 tipe_akun = "Kasir";
+                
             }
 
             Config config = new Config(tipe_akun, username, password);

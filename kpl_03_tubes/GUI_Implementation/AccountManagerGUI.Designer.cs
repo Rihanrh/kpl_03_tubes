@@ -33,6 +33,7 @@
             loginButton = new Button();
             registrasiButton = new Button();
             label1 = new Label();
+            pictureBox1 = new PictureBox();
             regisPanel = new Panel();
             regisBack = new Button();
             regisSubmit = new Button();
@@ -45,18 +46,21 @@
             label4 = new Label();
             label3 = new Label();
             regisTarget = new Label();
+            pictureBox2 = new PictureBox();
             regisChoosePanel = new Panel();
             label12 = new Label();
             regisChooseBack = new Button();
             chooseRegisterKasir = new Button();
             chooseRegisterPembeli = new Button();
             chooseRegisterTenant = new Button();
+            pictureBox3 = new PictureBox();
             loginChoosePanel = new Panel();
             loginChooseBack = new Button();
             chooseLoginKasir = new Button();
             chooseLoginTenant = new Button();
             chooseLoginPembeli = new Button();
             label10 = new Label();
+            pictureBox4 = new PictureBox();
             loginPanel = new Panel();
             loginBack = new Button();
             loginSubmit = new Button();
@@ -65,21 +69,17 @@
             label14 = new Label();
             label15 = new Label();
             loginTarget = new Label();
-            pictureBox1 = new PictureBox();
-            pictureBox2 = new PictureBox();
-            pictureBox3 = new PictureBox();
-            pictureBox4 = new PictureBox();
             pictureBox5 = new PictureBox();
             pictureBox6 = new PictureBox();
             startScreenPanel.SuspendLayout();
-            regisPanel.SuspendLayout();
-            regisChoosePanel.SuspendLayout();
-            loginChoosePanel.SuspendLayout();
-            loginPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            regisPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            regisChoosePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            loginChoosePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            loginPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             SuspendLayout();
@@ -151,6 +151,15 @@
             label1.Size = new Size(242, 51);
             label1.TabIndex = 0;
             label1.Text = "Pilih Menu";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.Account_Selection;
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(785, 556);
+            pictureBox1.TabIndex = 4;
+            pictureBox1.TabStop = false;
             // 
             // regisPanel
             // 
@@ -300,6 +309,15 @@
             regisTarget.TabIndex = 1;
             regisTarget.Text = "regisTarget";
             // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.Account_Selection;
+            pictureBox2.Location = new Point(0, 0);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(785, 556);
+            pictureBox2.TabIndex = 16;
+            pictureBox2.TabStop = false;
+            // 
             // regisChoosePanel
             // 
             regisChoosePanel.Controls.Add(label12);
@@ -382,6 +400,15 @@
             chooseRegisterTenant.UseVisualStyleBackColor = false;
             chooseRegisterTenant.Click += chooseRegisterTenant_Click;
             // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = Properties.Resources.Account_Selection;
+            pictureBox3.Location = new Point(0, 0);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(785, 556);
+            pictureBox3.TabIndex = 16;
+            pictureBox3.TabStop = false;
+            // 
             // loginChoosePanel
             // 
             loginChoosePanel.Controls.Add(loginChooseBack);
@@ -463,6 +490,15 @@
             label10.Size = new Size(346, 49);
             label10.TabIndex = 0;
             label10.Text = "Pilih Akun Login";
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Image = Properties.Resources.Account_Selection;
+            pictureBox4.Location = new Point(-5, -5);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(790, 561);
+            pictureBox4.TabIndex = 14;
+            pictureBox4.TabStop = false;
             // 
             // loginPanel
             // 
@@ -560,42 +596,6 @@
             loginTarget.TabIndex = 1;
             loginTarget.Text = "loginTarget";
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.Account_Selection;
-            pictureBox1.Location = new Point(0, 0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(785, 556);
-            pictureBox1.TabIndex = 4;
-            pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = Properties.Resources.Account_Selection;
-            pictureBox2.Location = new Point(0, 0);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(785, 556);
-            pictureBox2.TabIndex = 16;
-            pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.Image = Properties.Resources.Account_Selection;
-            pictureBox3.Location = new Point(0, 0);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(785, 556);
-            pictureBox3.TabIndex = 16;
-            pictureBox3.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            pictureBox4.Image = Properties.Resources.Account_Selection;
-            pictureBox4.Location = new Point(-5, -5);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(790, 561);
-            pictureBox4.TabIndex = 14;
-            pictureBox4.TabStop = false;
-            // 
             // pictureBox5
             // 
             pictureBox5.Image = Properties.Resources.Account_Selection;
@@ -619,29 +619,29 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(782, 553);
+            Controls.Add(startScreenPanel);
+            Controls.Add(loginPanel);
             Controls.Add(loginChoosePanel);
             Controls.Add(regisChoosePanel);
-            Controls.Add(startScreenPanel);
             Controls.Add(regisPanel);
-            Controls.Add(loginPanel);
             Controls.Add(pictureBox6);
             Margin = new Padding(3, 4, 3, 4);
             Name = "AccountManagerGUI";
             Text = "Form1";
             startScreenPanel.ResumeLayout(false);
             startScreenPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             regisPanel.ResumeLayout(false);
             regisPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             regisChoosePanel.ResumeLayout(false);
             regisChoosePanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             loginChoosePanel.ResumeLayout(false);
             loginChoosePanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             loginPanel.ResumeLayout(false);
             loginPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             ResumeLayout(false);

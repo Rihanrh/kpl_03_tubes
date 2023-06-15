@@ -152,6 +152,10 @@ namespace GUI_Implementation
             if (controller.Login(usernameLoginBox.Text, passwordLoginBox.Text, controller.CurrentState))
             {
                 MessageBox.Show("Login Berhasil!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Hide();
+                Kasir kasir = new Kasir();
+                kasir.Show();
+
             }
             else
             {
