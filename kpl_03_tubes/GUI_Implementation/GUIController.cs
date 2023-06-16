@@ -120,5 +120,10 @@ namespace GUI_Implementation
             }
         }
 
+        public void StatusPemesanan(MelihatStatusPemesanan view)
+        {
+           
+        }
+
     }
 }

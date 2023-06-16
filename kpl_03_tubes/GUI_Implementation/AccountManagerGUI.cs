@@ -164,6 +164,12 @@ namespace GUI_Implementation
                     TenantMengubahStatusPesanan tenantSementara = new TenantMengubahStatusPesanan();
                     tenantSementara.Show();
                 }
+                else if(controller.CurrentState == AccountManager.AccountMachine.State.PembeliLogin)
+                {
+                    MelihatStatusPemesanan pembeli = new MelihatStatusPemesanan();
+                    pembeli.Show();
+                         
+                }
 
             }
             else
