@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -34,17 +35,29 @@ namespace GUI_Implementation
 
         private void TampilkanMenu()
         {
-            daftarMenu.Add("Nasi Goreng - Rp 15.000");
-            daftarMenu.Add("Katsu - Rp 18.000");
-            daftarMenu.Add("Mie Goreng - Rp 13.000");
-            daftarMenu.Add("Ayam Geprek - Rp 18.000");
+            //Menampilkan menu yang tersedia
+            string[] daftarMenu = GetDaftarMenu();
+            listBox1.Items.AddRange(daftarMenu);
 
             listBox1.DataSource = daftarMenu;
         }
 
+        private string[] GetDaftarMenu()
+        {
+            // Menggunakan Secure Coding: Menerapkan separasi data dan kode
+            string[] daftarMenu = new string[]
+            {
+                "Nasi Goreng - Rp 15.000",
+                "Katsu - Rp 18.000",
+                "Mie Goreng - Rp 13.000",
+                "Ayam Geprek - Rp 18.000"
+            };
+            return daftarMenu;
+        }
 
         private void UpdateUI()
         {
+            // Menggunakan metode automata dimana dimulai dari state awal
             switch (currentState)
             {
                 case State.Awal:
@@ -81,6 +94,7 @@ namespace GUI_Implementation
 
         private void buttonPilih_Click(object sender, EventArgs e)
         {
+            //Action untuk memilih menu makanan
             if (listBox1.SelectedIndex != -1)
             {
                 currentState = State.PilihMenu;
@@ -95,6 +109,7 @@ namespace GUI_Implementation
 
         private void buttonSelesai_Click(object sender, EventArgs e)
         {
+            //Action ketika telah selesai memilih menu makanan
             currentState = State.Selesai;
             UpdateUI();
 
