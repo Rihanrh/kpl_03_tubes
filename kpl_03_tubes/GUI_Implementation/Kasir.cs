@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Library_StatusOrder;
+using PrintStruk;
 
 
 namespace GUI_Implementation
@@ -16,10 +17,12 @@ namespace GUI_Implementation
     {
         private List<Order> orders;
         private GUIController controller;
+        private PrintStrukPDF printer;
         public Kasir()
         {
             InitializeComponent();
             controller = new GUIController();
+            printer = new PrintStrukPDF();
         }
 
         private void Kasir_Load(object sender, EventArgs e)
@@ -71,7 +74,9 @@ namespace GUI_Implementation
 
         private void buttonPrintStruk_Click(object sender, EventArgs e)
         {
-
+            //implementasi belum selesai :/
+            Receipt receipt = new Receipt();
+            printer.GenerateReceipt("D:\\", receipt);
         }
 
         private void buttonLogoutKasir_Click(object sender, EventArgs e)
