@@ -11,6 +11,7 @@
   <ItemGroup>
     <ProjectReference Include="..\AccountManager\AccountManager.csproj" />
     <ProjectReference Include="..\Library_StatusOrder\Library_StatusOrder.csproj" />
+    <ProjectReference Include="..\MengaturMenu\MengaturMenu.csproj" />
   </ItemGroup>
 
   <ItemGroup>

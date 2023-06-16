@@ -44,12 +44,14 @@
             labelNoAntrian = new Label();
             labelJudulStatusPesanan = new Label();
             listView1 = new ListView();
+            button1 = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.DarkRed;
+            panel1.Controls.Add(button1);
             panel1.Controls.Add(buttonUbahStatusPesanan);
             panel1.Controls.Add(textBoxMetodePembayaran);
             panel1.Controls.Add(textBoxHarga);
@@ -67,7 +69,7 @@
             panel1.Controls.Add(listView1);
             panel1.Location = new Point(-1, 1);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1382, 551);
+            panel1.Size = new Size(1382, 593);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
@@ -218,11 +220,24 @@
             listView1.SelectedIndexChanged += listView1_SelectedIndexChanged;
             listView1.Click += listView1_Click;
             // 
+            // button1
+            // 
+            button1.BackColor = Color.White;
+            button1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.ForeColor = Color.DarkRed;
+            button1.Location = new Point(36, 547);
+            button1.Name = "button1";
+            button1.Size = new Size(94, 31);
+            button1.TabIndex = 15;
+            button1.Text = "Back";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
             // TenantMengubahStatusPesanan
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1354, 553);
+            ClientSize = new Size(1354, 591);
             Controls.Add(panel1);
             Name = "TenantMengubahStatusPesanan";
             Text = "Mengubah Status Pesanan - Tenant";
@@ -250,5 +265,6 @@
         private TextBox textBoxNoAntrian;
         private Button buttonUbahStatusPesanan;
         private TextBox textBoxMetodePembayaran;
+        private Button button1;
     }
 }

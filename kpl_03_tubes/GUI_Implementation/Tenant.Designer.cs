@@ -29,13 +29,16 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            statusPesanan = new Button();
             panel2 = new Panel();
+            labelOtherImage = new Label();
+            buttonAddMenu = new Button();
             buttonInsert = new Button();
             pictureBox1 = new PictureBox();
             label7 = new Label();
-            richTextBox1 = new RichTextBox();
-            textBox3 = new TextBox();
-            textBox1 = new TextBox();
+            BoxDeskrip = new RichTextBox();
+            BoxHarga = new TextBox();
+            BoxNama = new TextBox();
             label6 = new Label();
             label5 = new Label();
             label4 = new Label();
@@ -44,7 +47,6 @@
             buttonLogoutKasir = new Button();
             label1 = new Label();
             buttonMembuatMenu = new Button();
-            button1 = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -53,6 +55,7 @@
             // panel1
             // 
             panel1.BackColor = Color.DarkRed;
+            panel1.Controls.Add(statusPesanan);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(buttonLogoutKasir);
             panel1.Controls.Add(label1);
@@ -63,16 +66,31 @@
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
+            // statusPesanan
+            // 
+            statusPesanan.AccessibleName = "statusPesanan";
+            statusPesanan.BackColor = Color.White;
+            statusPesanan.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            statusPesanan.ForeColor = Color.DarkRed;
+            statusPesanan.Location = new Point(30, 215);
+            statusPesanan.Name = "statusPesanan";
+            statusPesanan.Size = new Size(248, 63);
+            statusPesanan.TabIndex = 6;
+            statusPesanan.Text = "Status Pesanan";
+            statusPesanan.UseVisualStyleBackColor = false;
+            statusPesanan.Click += statusPesanan_Click;
+            // 
             // panel2
             // 
             panel2.BackColor = Color.White;
-            panel2.Controls.Add(button1);
+            panel2.Controls.Add(labelOtherImage);
+            panel2.Controls.Add(buttonAddMenu);
             panel2.Controls.Add(buttonInsert);
             panel2.Controls.Add(pictureBox1);
             panel2.Controls.Add(label7);
-            panel2.Controls.Add(richTextBox1);
-            panel2.Controls.Add(textBox3);
-            panel2.Controls.Add(textBox1);
+            panel2.Controls.Add(BoxDeskrip);
+            panel2.Controls.Add(BoxHarga);
+            panel2.Controls.Add(BoxNama);
             panel2.Controls.Add(label6);
             panel2.Controls.Add(label5);
             panel2.Controls.Add(label4);
@@ -83,6 +101,24 @@
             panel2.Size = new Size(630, 529);
             panel2.TabIndex = 5;
             panel2.Paint += panel2_Paint;
+            // 
+            // labelOtherImage
+            // 
+            labelOtherImage.AutoSize = true;
+            labelOtherImage.Location = new Point(407, 199);
+            labelOtherImage.Name = "labelOtherImage";
+            labelOtherImage.Size = new Size(0, 20);
+            labelOtherImage.TabIndex = 13;
+            // 
+            // buttonAddMenu
+            // 
+            buttonAddMenu.Location = new Point(265, 456);
+            buttonAddMenu.Name = "buttonAddMenu";
+            buttonAddMenu.Size = new Size(125, 52);
+            buttonAddMenu.TabIndex = 12;
+            buttonAddMenu.Text = "Add Menu";
+            buttonAddMenu.UseVisualStyleBackColor = true;
+            buttonAddMenu.Click += button1_Click;
             // 
             // buttonInsert
             // 
@@ -112,27 +148,30 @@
             label7.TabIndex = 9;
             label7.Text = "Rp.";
             // 
-            // richTextBox1
+            // BoxDeskrip
             // 
-            richTextBox1.Location = new Point(168, 332);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(401, 106);
-            richTextBox1.TabIndex = 8;
-            richTextBox1.Text = "";
+            BoxDeskrip.Location = new Point(168, 332);
+            BoxDeskrip.Name = "BoxDeskrip";
+            BoxDeskrip.Size = new Size(401, 106);
+            BoxDeskrip.TabIndex = 8;
+            BoxDeskrip.Text = "";
+            BoxDeskrip.TextChanged += BoxDeskrip_TextChanged;
             // 
-            // textBox3
+            // BoxHarga
             // 
-            textBox3.Location = new Point(205, 288);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(147, 27);
-            textBox3.TabIndex = 7;
+            BoxHarga.Location = new Point(205, 288);
+            BoxHarga.Name = "BoxHarga";
+            BoxHarga.Size = new Size(147, 27);
+            BoxHarga.TabIndex = 7;
+            BoxHarga.TextChanged += BoxHarga_TextChanged;
             // 
-            // textBox1
+            // BoxNama
             // 
-            textBox1.Location = new Point(168, 79);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(304, 27);
-            textBox1.TabIndex = 5;
+            BoxNama.Location = new Point(168, 79);
+            BoxNama.Name = "BoxNama";
+            BoxNama.Size = new Size(304, 27);
+            BoxNama.TabIndex = 5;
+            BoxNama.TextChanged += BoxNama_TextChanged;
             // 
             // label6
             // 
@@ -208,9 +247,9 @@
             label1.ForeColor = Color.White;
             label1.Location = new Point(46, 32);
             label1.Name = "label1";
-            label1.Size = new Size(218, 38);
+            label1.Size = new Size(241, 38);
             label1.TabIndex = 3;
-            label1.Text = "Dashboard Kasir";
+            label1.Text = "Dashboard Tenant";
             label1.Click += label1_Click;
             // 
             // buttonMembuatMenu
@@ -225,15 +264,6 @@
             buttonMembuatMenu.Text = "Buat Menu";
             buttonMembuatMenu.UseVisualStyleBackColor = false;
             buttonMembuatMenu.Click += buttonKonfirmasiPembayaran_Click;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(265, 456);
-            button1.Name = "button1";
-            button1.Size = new Size(125, 52);
-            button1.TabIndex = 12;
-            button1.Text = "Add Menu";
-            button1.UseVisualStyleBackColor = true;
             // 
             // Tenant
             // 
@@ -264,11 +294,13 @@
         private Label label5;
         private PictureBox pictureBox1;
         private Label label7;
-        private RichTextBox richTextBox1;
-        private TextBox textBox3;
-        private TextBox textBox1;
+        private RichTextBox BoxDeskrip;
+        private TextBox BoxHarga;
+        private TextBox BoxNama;
         private Label label6;
         private Button buttonInsert;
-        private Button button1;
+        private Button buttonAddMenu;
+        private Label labelOtherImage;
+        private Button statusPesanan;
     }
 }
