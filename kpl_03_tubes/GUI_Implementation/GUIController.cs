@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static AccountManager.AccountMachine;
+using MengaturMenu;
 
 namespace GUI_Implementation
 {
@@ -19,6 +20,8 @@ namespace GUI_Implementation
         private TenantMengubahStatusPesanan viewTenant;
         private List<Order> orders;
         private Kasir viewKasir;
+        //Sementara
+        private List<MenuMakanan<string>> DaftarMenu = new List<MenuMakanan<string>>();
 
         public State CurrentState => accountMachine.currentState;
 
@@ -27,6 +30,7 @@ namespace GUI_Implementation
             accountConfig = new AccountConfig();
             accountMachine = new AccountMachine();
             accountMachine.currentState = AccountMachine.State.Start;
+
         }
 
         public void HandleTrigger(Trigger trigger)
@@ -141,6 +145,30 @@ namespace GUI_Implementation
             {
                 view.UpdateKonfirmasiPembayaran();
             }
+        }
+
+        public MenuMakanan<string> MembuatMenu(string nama,List<string> list,double harga, string deskripsi)
+        {
+            try
+            {
+                //Debug Assert memastikan tidak null
+                Debug.Assert(!string.IsNullOrEmpty(nama), "Name cannot be null or empty.");
+                Debug.Assert(harga >= 0, "Price cannot be negative.");
+                Debug.Assert(!string.IsNullOrEmpty(deskripsi), "Description cannot be null or empty.");
+
+                MenuMakanan<string> menuMakanan = new MenuMakanan<string>(nama, list, harga, deskripsi);
+                return menuMakanan;
+            }
+            catch (ArgumentException e)
+            {
+                Console.WriteLine(e.Message);
+                return null;
+            }
+        }
+
+        public void MenambahMenu(MenuMakanan<string> menuMakanan)
+        {
+            DaftarMenu.Add(menuMakanan);
         }
 
     }
