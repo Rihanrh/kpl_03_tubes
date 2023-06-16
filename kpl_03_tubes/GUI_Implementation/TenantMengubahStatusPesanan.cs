@@ -15,9 +15,11 @@ namespace GUI_Implementation
     public partial class TenantMengubahStatusPesanan : Form
     {
         private List<order> orders;
+        private GUIController controller;
         public TenantMengubahStatusPesanan()
         {
             InitializeComponent();
+            controller = new GUIController();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -80,15 +82,19 @@ namespace GUI_Implementation
 
         private void buttonUbahStatusPesanan_Click(object sender, EventArgs e)
         {
-            if (listView1.SelectedItems.Count > 0)
-            {
-                listView1.SelectedItems[0].SubItems[0].Text = textBoxNoAntrian.Text;
-                listView1.SelectedItems[0].SubItems[1].Text = textBoxMenu.Text;
-                listView1.SelectedItems[0].SubItems[2].Text = textBoxJumlah.Text;
-                listView1.SelectedItems[0].SubItems[3].Text = textBoxHarga.Text;
-                listView1.SelectedItems[0].SubItems[4].Text = textBoxMetodePembayaran.Text;
-                listView1.SelectedItems[0].SubItems[5].Text = comboBox1.SelectedItem.ToString();
-            }
+            controller.UpdateOrderStatus(this);
+        }
+
+        public int ListViewSelectedItemsCount => listView1.SelectedItems.Count;
+
+        public void UpdateSelectedListViewItem()
+        {
+            listView1.SelectedItems[0].SubItems[0].Text = textBoxNoAntrian.Text;
+            listView1.SelectedItems[0].SubItems[1].Text = textBoxMenu.Text;
+            listView1.SelectedItems[0].SubItems[2].Text = textBoxJumlah.Text;
+            listView1.SelectedItems[0].SubItems[3].Text = textBoxHarga.Text;
+            listView1.SelectedItems[0].SubItems[4].Text = textBoxMetodePembayaran.Text;
+            listView1.SelectedItems[0].SubItems[5].Text = comboBox1.SelectedItem.ToString();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

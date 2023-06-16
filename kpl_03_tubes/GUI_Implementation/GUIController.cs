@@ -1,4 +1,5 @@
 ﻿using AccountManager;
+using Library_StatusOrder;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -15,6 +16,11 @@ namespace GUI_Implementation
         private AccountManagerGUI accountManagerGUI;
         private AccountConfig accountConfig;
         private AccountMachine accountMachine;
+        private TenantMengubahStatusPesanan viewTenant;
+        private List<order> orders;
+        private Kasir viewKasir;
+
+        
         public State CurrentState => accountMachine.currentState;
 
         public GUIController()
@@ -22,6 +28,8 @@ namespace GUI_Implementation
             accountConfig = new AccountConfig();
             accountMachine = new AccountMachine();
             accountMachine.currentState = AccountMachine.State.Start;
+
+            
         }
 
         public void HandleTrigger(Trigger trigger)
@@ -93,6 +101,22 @@ namespace GUI_Implementation
             else
             {
                 return false;
+            }
+        }
+
+        public void UpdateOrderStatus(TenantMengubahStatusPesanan view)
+        {
+            if (view.ListViewSelectedItemsCount > 0)
+            {
+                view.UpdateSelectedListViewItem();
+            }
+        }
+
+        public void UpdateKonfirmasiPembayaran(Kasir view)
+        {
+            if (view.ListViewSelectedItemsCount > 0)
+            {
+                view.UpdateKonfirmasiPembayaran();
             }
         }
 
