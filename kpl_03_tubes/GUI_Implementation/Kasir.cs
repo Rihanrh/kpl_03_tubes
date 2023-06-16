@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Library_StatusOrder;
+using MengaturMenu;
 using PrintStruk;
 
 
@@ -74,8 +75,13 @@ namespace GUI_Implementation
 
         private void buttonPrintStruk_Click(object sender, EventArgs e)
         {
-            //implementasi belum selesai :/
-            Receipt receipt = new Receipt();
+            //implementasi belum selesai , just a proof of concept :/
+            List<MenuMakanan<string>> items = new List<MenuMakanan<string>>();
+            List<string> images = new List<string>();
+            items[0] = new MenuMakanan<string>("Burger", images,25000, "Roti+Daging+roti" );
+            items[1] = new MenuMakanan<string>("Pasta", images, 36000, "Italian Dish");
+            DateTime tanggal = DateTime.Now;
+            Receipt receipt = new Receipt("1001",tanggal, items);
             printer.GenerateReceipt("D:\\", receipt);
         }
 
