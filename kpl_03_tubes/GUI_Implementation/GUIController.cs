@@ -17,7 +17,7 @@ namespace GUI_Implementation
         private AccountConfig accountConfig;
         private AccountMachine accountMachine;
         private TenantMengubahStatusPesanan viewTenant;
-        private List<order> orders;
+        private List<Order> orders;
         private Kasir viewKasir;
 
         

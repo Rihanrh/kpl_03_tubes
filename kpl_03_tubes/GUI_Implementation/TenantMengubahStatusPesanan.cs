@@ -14,7 +14,7 @@ namespace GUI_Implementation
 {
     public partial class TenantMengubahStatusPesanan : Form
     {
-        private List<order> orders;
+        private List<Order> orders;
         private GUIController controller;
         public TenantMengubahStatusPesanan()
         {
@@ -49,22 +49,22 @@ namespace GUI_Implementation
         }
         public void fillListView()
         {
-            orders = new List<order>
+            orders = new List<Order>
             {
-                new order("1", "Rasya", "Sate Padang", 2, 20000, "Tunai", "Menunggu konfirmasi pembayaran"),
-                new order("4", "Rasya", "Nasi Goreng", 2, 30000, "Qris", "Menunggu konfirmasi pembayaran")
+                new Order("1", "Rasya", "Sate Padang", 2, 20000, "Tunai", "Menunggu konfirmasi pembayaran"),
+                new Order("4", "Rasya", "Nasi Goreng", 2, 30000, "Qris", "Menunggu konfirmasi pembayaran")
             };
 
 
             foreach (var order in orders)
             {
 
-                ListViewItem item = new ListViewItem(order.kodeAntrian);
-                item.SubItems.Add(order.namaMenu);
-                item.SubItems.Add(order.qty.ToString());
-                item.SubItems.Add(order.harga.ToString());
-                item.SubItems.Add(order.paymentMethod);
-                item.SubItems.Add(order.statusPesanan);
+                ListViewItem item = new ListViewItem(order.KodeAntrian);
+                item.SubItems.Add(order.NamaMenu);
+                item.SubItems.Add(order.Qty.ToString());
+                item.SubItems.Add(order.Harga.ToString());
+                item.SubItems.Add(order.PaymentMethod);
+                item.SubItems.Add(order.StatusPesanan);
 
                 listView1.Items.Add(item);
             }
