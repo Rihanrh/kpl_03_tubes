@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GUI_Implementation", "GUI_I
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library_StatusOrder", "Library_StatusOrder\Library_StatusOrder.csproj", "{4DF25270-AC96-47FB-88CB-D13FD5F3FD5A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChekcoutMenuMaknanan", "ChekcoutMenuMaknanan\ChekcoutMenuMaknanan.csproj", "{459F24C9-58D3-47B5-AD86-C905DAF43614}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{4DF25270-AC96-47FB-88CB-D13FD5F3FD5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4DF25270-AC96-47FB-88CB-D13FD5F3FD5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4DF25270-AC96-47FB-88CB-D13FD5F3FD5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{459F24C9-58D3-47B5-AD86-C905DAF43614}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{459F24C9-58D3-47B5-AD86-C905DAF43614}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{459F24C9-58D3-47B5-AD86-C905DAF43614}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{459F24C9-58D3-47B5-AD86-C905DAF43614}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

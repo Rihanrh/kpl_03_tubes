@@ -206,6 +206,7 @@
             labelJudulStatusPesanan.Size = new Size(295, 31);
             labelJudulStatusPesanan.TabIndex = 1;
             labelJudulStatusPesanan.Text = "Mengubah Status Pesanan";
+            labelJudulStatusPesanan.Click += labelJudulStatusPesanan_Click;
             // 
             // listView1
             // 
