@@ -153,14 +153,28 @@ namespace GUI_Implementation
             {
                 MessageBox.Show("Login Berhasil!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Hide();
-                Kasir kasir = new Kasir();
-                kasir.Show();
+
+                if (controller.CurrentState == AccountManager.AccountMachine.State.KasirLogin)
+                {
+                    Kasir kasir = new Kasir();
+                    kasir.Show();
+                }
+                else if (controller.CurrentState == AccountManager.AccountMachine.State.TenantLogin)
+                {
+                    TenantMengubahStatusPesanan tenantSementara = new TenantMengubahStatusPesanan();
+                    tenantSementara.Show();
+                }
 
             }
             else
             {
                 MessageBox.Show("Username/Password/Tipe akun invalid!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void usernameLoginBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

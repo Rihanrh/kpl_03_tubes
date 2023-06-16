@@ -559,6 +559,7 @@
             usernameLoginBox.Name = "usernameLoginBox";
             usernameLoginBox.Size = new Size(260, 27);
             usernameLoginBox.TabIndex = 4;
+            usernameLoginBox.TextChanged += usernameLoginBox_TextChanged;
             // 
             // label14
             // 
@@ -619,8 +620,8 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(782, 553);
-            Controls.Add(startScreenPanel);
             Controls.Add(loginPanel);
+            Controls.Add(startScreenPanel);
             Controls.Add(loginChoosePanel);
             Controls.Add(regisChoosePanel);
             Controls.Add(regisPanel);
