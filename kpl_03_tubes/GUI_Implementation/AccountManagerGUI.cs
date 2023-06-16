@@ -176,5 +176,10 @@ namespace GUI_Implementation
         {
 
         }
+
+        private void AccountManagerGUI_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
