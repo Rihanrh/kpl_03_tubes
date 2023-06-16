@@ -16,10 +16,15 @@ namespace MengaturMenu
         public MenuMakanan(string name, List<T> listImages, double harga, string deskripsi)
         {
             // Preconditions
-            Contract.Requires(!string.IsNullOrEmpty(name), "Name cannot be null or empty.");
-            Contract.Requires(listImages != null && listImages.Count > 0, "List of images cannot be null or empty.");
-            Contract.Requires(harga >= 0, "Price cannot be negative.");
-            Contract.Requires(!string.IsNullOrEmpty(deskripsi), "Description cannot be null or empty.");
+            if (string.IsNullOrEmpty(name))
+                throw new ArgumentException("Name cannot be null or empty.", nameof(name));
+            if (listImages == null || listImages.Count == 0)
+                throw new ArgumentException("List of images cannot be null or empty.", nameof(listImages));
+            if (harga < 0)
+                throw new ArgumentException("Price cannot be negative.", nameof(harga));
+            if (string.IsNullOrEmpty(deskripsi))
+                throw new ArgumentException("Description cannot be null or empty.", nameof(deskripsi));
+
 
             nameMenu = name;
             pathImages = listImages;
