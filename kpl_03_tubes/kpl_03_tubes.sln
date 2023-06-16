@@ -7,9 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AccountManager", "AccountMa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GUI_Implementation", "GUI_Implementation\GUI_Implementation.csproj", "{8F8F1961-0AA8-418D-9EA4-006E49FD5DD7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library_StatusOrder", "Library_StatusOrder\Library_StatusOrder.csproj", "{4DF25270-AC96-47FB-88CB-D13FD5F3FD5A}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MengubahStatusPesanan", "MengubahStatusPesanan\MengubahStatusPesanan.csproj", "{BA3C48AA-187B-4639-A913-2EB0378FB0B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library_StatusOrder", "Library_StatusOrder\Library_StatusOrder.csproj", "{4DF25270-AC96-47FB-88CB-D13FD5F3FD5A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +27,6 @@ Global
 		{4DF25270-AC96-47FB-88CB-D13FD5F3FD5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4DF25270-AC96-47FB-88CB-D13FD5F3FD5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4DF25270-AC96-47FB-88CB-D13FD5F3FD5A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BA3C48AA-187B-4639-A913-2EB0378FB0B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BA3C48AA-187B-4639-A913-2EB0378FB0B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BA3C48AA-187B-4639-A913-2EB0378FB0B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BA3C48AA-187B-4639-A913-2EB0378FB0B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
