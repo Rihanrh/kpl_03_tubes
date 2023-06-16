@@ -75,28 +75,6 @@ namespace GUI_Implementation
             MessageBox.Show("Registrasi Berhasil. Kembali ke halaman utama", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private bool IsValidUsername(string username)
-        {
-            if (string.IsNullOrWhiteSpace(username))
-                return false;
-
-            if (username.Length > 20)
-                return false;
-
-            return true;
-        }
-
-        private bool IsValidPassword(string password)
-        {
-            if (string.IsNullOrWhiteSpace(password))
-                return false;
-
-            if (password.Length > 16)
-                return false;
-
-            return true;
-        }
-
         public bool Login(string username, string password, State currentState)
         {
             string tipe_akun = "";
@@ -119,16 +97,6 @@ namespace GUI_Implementation
             Config userAccount = config.FirstOrDefault(c => c.tipe_akun == tipe_akun && c.username == username && c.password == password);
 
             return userAccount != null;
-        }
-
-        private void ShowErrorMessageBox(string message)
-        {
-            MessageBox.Show(message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
-
-        private void ShowInfoMessageBox(string message)
-        {
-            MessageBox.Show(message, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public void UpdateOrderStatus(TenantMengubahStatusPesanan view)
