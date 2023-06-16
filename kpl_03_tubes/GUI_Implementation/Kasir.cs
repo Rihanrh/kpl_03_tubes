@@ -14,9 +14,11 @@ namespace GUI_Implementation
     public partial class Kasir : Form
     {
         private List<order> orders;
+        private GUIController controller;
         public Kasir()
         {
             InitializeComponent();
+            controller = new GUIController();
         }
 
         private void Kasir_Load(object sender, EventArgs e)
@@ -63,16 +65,7 @@ namespace GUI_Implementation
 
         private void buttonKonfirmasiPembayaran_Click(object sender, EventArgs e)
         {
-            if (listView1.SelectedItems.Count > 0)
-            {
-                listView1.SelectedItems[0].SubItems[0].Text = textBoxNoAntrian.Text;
-                listView1.SelectedItems[0].SubItems[1].Text = textBoxTenant.Text ;
-                listView1.SelectedItems[0].SubItems[2].Text = textBoxMenu.Text;
-                listView1.SelectedItems[0].SubItems[3].Text = textBoxJumlah.Text;
-                listView1.SelectedItems[0].SubItems[4].Text = textBoxHarga.Text;
-                listView1.SelectedItems[0].SubItems[5].Text = textBoxMetodePembayaran .Text;
-                listView1.SelectedItems[0].SubItems[6].Text = textBoxStatusPesanan.Text;
-            }
+            controller.UpdateKonfirmasiPembayaran(this);
         }
 
         private void buttonPrintStruk_Click(object sender, EventArgs e)
@@ -99,6 +92,7 @@ namespace GUI_Implementation
         {
 
         }
+        public int ListViewSelectedItemsCount => listView1.SelectedItems.Count;
 
         private void listView1_Click(object sender, EventArgs e)
         {
@@ -115,6 +109,17 @@ namespace GUI_Implementation
             
         }
 
-        
+        public void UpdateKonfirmasiPembayaran()
+        {
+            listView1.SelectedItems[0].SubItems[0].Text = textBoxNoAntrian.Text;
+            listView1.SelectedItems[0].SubItems[1].Text = textBoxTenant.Text;
+            listView1.SelectedItems[0].SubItems[2].Text = textBoxMenu.Text;
+            listView1.SelectedItems[0].SubItems[3].Text = textBoxJumlah.Text;
+            listView1.SelectedItems[0].SubItems[4].Text = textBoxHarga.Text;
+            listView1.SelectedItems[0].SubItems[5].Text = textBoxMetodePembayaran.Text;
+            listView1.SelectedItems[0].SubItems[6].Text = textBoxStatusPesanan.Text;
+        }
+
+
     }
 }
