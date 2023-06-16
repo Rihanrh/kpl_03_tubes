@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using MengaturMenu;
 
-namespace MainConsole
+namespace MengaturMenu
 {
     public class Menu
     {
