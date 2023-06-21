@@ -177,9 +177,7 @@ namespace GUI_Implementation
 
         }
 
-        private void AccountManagerGUI_Load(object sender, EventArgs e)
-        {
-
-        }
+        private void pictureBox5_Click(object sender, EventArgs e){}
+        private void AccountManagerGUI_Load(object sender, EventArgs e){}
     }
 }
