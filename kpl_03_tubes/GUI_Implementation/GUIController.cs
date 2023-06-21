@@ -115,6 +115,9 @@ namespace GUI_Implementation
             }
         }
 
+        public void StatusPemesanan(MelihatStatusPemesanan view)
+        {}
+      
         public MenuMakanan<string> MembuatMenu(string nama,List<string> list,double harga, string deskripsi)
         {
             try
