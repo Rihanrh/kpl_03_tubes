@@ -262,6 +262,7 @@
             passwordRegisBox.Location = new Point(263, 290);
             passwordRegisBox.Margin = new Padding(3, 4, 3, 4);
             passwordRegisBox.Name = "passwordRegisBox";
+            passwordRegisBox.PasswordChar = '*';
             passwordRegisBox.Size = new Size(260, 27);
             passwordRegisBox.TabIndex = 5;
             // 
@@ -549,6 +550,7 @@
             passwordLoginBox.Location = new Point(263, 290);
             passwordLoginBox.Margin = new Padding(3, 4, 3, 4);
             passwordLoginBox.Name = "passwordLoginBox";
+            passwordLoginBox.PasswordChar = '*';
             passwordLoginBox.Size = new Size(260, 27);
             passwordLoginBox.TabIndex = 5;
             // 
@@ -605,6 +607,7 @@
             pictureBox5.Size = new Size(785, 556);
             pictureBox5.TabIndex = 13;
             pictureBox5.TabStop = false;
+            pictureBox5.Click += pictureBox5_Click;
             // 
             // pictureBox6
             // 
@@ -620,15 +623,16 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(782, 553);
+            Controls.Add(regisPanel);
             Controls.Add(loginPanel);
             Controls.Add(startScreenPanel);
             Controls.Add(loginChoosePanel);
             Controls.Add(regisChoosePanel);
-            Controls.Add(regisPanel);
             Controls.Add(pictureBox6);
             Margin = new Padding(3, 4, 3, 4);
             Name = "AccountManagerGUI";
             Text = "Form1";
+            Load += AccountManagerGUI_Load;
             startScreenPanel.ResumeLayout(false);
             startScreenPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

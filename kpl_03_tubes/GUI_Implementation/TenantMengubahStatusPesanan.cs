@@ -16,6 +16,7 @@ namespace GUI_Implementation
     {
         private List<Order> orders;
         private GUIController controller;
+        private Tenant tenant;
         public TenantMengubahStatusPesanan()
         {
             InitializeComponent();
@@ -100,6 +101,15 @@ namespace GUI_Implementation
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void labelJudulStatusPesanan_Click(object sender, EventArgs e)
+        {}
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            tenant.Visible = true;
         }
     }
 }

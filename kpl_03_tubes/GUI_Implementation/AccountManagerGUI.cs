@@ -161,8 +161,8 @@ namespace GUI_Implementation
                 }
                 else if (controller.CurrentState == AccountManager.AccountMachine.State.TenantLogin)
                 {
-                    TenantMengubahStatusPesanan tenantSementara = new TenantMengubahStatusPesanan();
-                    tenantSementara.Show();
+                    Tenant tenant = new Tenant(); 
+                    tenant.Show();
                 }
                 else if(controller.CurrentState == AccountManager.AccountMachine.State.PembeliLogin)
                 {
@@ -182,5 +182,8 @@ namespace GUI_Implementation
         {
 
         }
+
+        private void pictureBox5_Click(object sender, EventArgs e){}
+        private void AccountManagerGUI_Load(object sender, EventArgs e){}
     }
 }
